@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #e8e0d2;
+    font-family: Arial, sans-serif;
+}
+
+/* CONTENEDOR */
+.collage {
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 7%;
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 100px;
+    gap: 25px;
+}
+
+/* TÍTULO */
+.collage h1 {
+    grid-column: 1 / 13;
+    text-align: center;
+
+    font-size: 4rem;
+    color: #b51d1d;
+
+    transform: rotate(-2deg);
+    margin-bottom: 30px;
+
+    text-shadow: 4px 4px 0px #f5f0e8;
+}
+
+/* TODAS LAS FOTOS */
+.collage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    background: white;
+    padding: 10px;
+
+    box-shadow: 8px 10px 18px rgba(0,0,0,.35);
+
+    transition: .3s;
+}
+
+/* FOTO 1 */
+.collage img:nth-of-type(1) {
+    grid-column: 1 / 5;
+    grid-row: 2 / 6;
+    transform: rotate(-5deg);
+}
+
+/* FOTO 2 */
+.collage img:nth-of-type(2) {
+    grid-column: 5 / 9;
+    grid-row: 2 / 6;
+    transform: rotate(3deg);
+}
+
+/* FOTO 3 */
+.collage img:nth-of-type(3) {
+    grid-column: 9 / 13;
+    grid-row: 2 / 7;
+    transform: rotate(-4deg);
+}
+
+/* FOTO 4 */
+.collage img:nth-of-type(4) {
+    grid-column: 2 / 6;
+    grid-row: 6 / 10;
+    transform: rotate(4deg);
+}
+
+/* FOTO 5 */
+.collage img:nth-of-type(5) {
+    grid-column: 6 / 10;
+    grid-row: 5 / 9;
+    transform: rotate(-2deg);
+}
+
+/* FOTO 6 */
+.collage img:nth-of-type(6) {
+    grid-column: 10 / 13;
+    grid-row: 7 / 11;
+    transform: rotate(6deg);
+}
+
+/* FOTO 7 */
+.collage img:nth-of-type(7) {
+    grid-column: 1 / 4;
+    grid-row: 10 / 14;
+    transform: rotate(-7deg);
+}
+
+/* FOTO 8 */
+.collage img:nth-of-type(8) {
+    grid-column: 4 / 8;
+    grid-row: 9 / 13;
+    transform: rotate(3deg);
+}
+
+/* FOTO 9 */
+.collage img:nth-of-type(9) {
+    grid-column: 8 / 11;
+    grid-row: 9 / 14;
+    transform: rotate(-5deg);
+}
+
+/* FOTO 10 */
+.collage img:nth-of-type(10) {
+    grid-column: 11 / 13;
+    grid-row: 11 / 15;
+    transform: rotate(7deg);
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+.collage img:hover {
+    transform: rotate(0deg) scale(1.08);
+    z-index: 20;
+    box-shadow: 15px 20px 30px rgba(0,0,0,.45);
+}
+
+
+/* ========================= */
+/*      CELULAR 📱           */
+/* ========================= */
+
+@media (max-width: 700px) {
+
+    .collage {
+        display: flex;
+        flex-direction: column;
+        padding: 50px 25px;
+        gap: 35px;
+    }
+
+    .collage h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .collage img {
+        width: 90%;
+        height: 300px;
+        margin: auto;
+    }
+
+    .collage img:nth-of-type(odd) {
+        transform: rotate(-4deg);
+    }
+
+    .collage img:nth-of-type(even) {
+        transform: rotate(4deg);
+    }
+}
